@@ -7,6 +7,9 @@ eval "$(starship init zsh)"
 # Add dotfiles bin to PATH
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
+# Add local node_modules/.bin to PATH
+export PATH="./node_modules/.bin:$PATH"
+
 # Node Version Manager (NVM)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"

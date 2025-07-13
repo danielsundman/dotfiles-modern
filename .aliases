@@ -106,4 +106,3 @@ alias path='echo -e ${PATH//:/\\n}'
 alias update='brew update; brew upgrade; brew cleanup; brew doctor'
 
 # Development shortcuts
-alias vinted-check='cd ~/dev/secondhandhelper/Functions/functions && ./src/scripts/vinted/shouldBeUnPublished.ts'

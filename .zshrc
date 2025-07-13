@@ -1,6 +1,9 @@
 # Load aliases
 source "$HOME/.dotfiles/.aliases"
 
+# Load extra configuration (if it exists)
+[ -f "$HOME/.extra" ] && source "$HOME/.extra"
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 

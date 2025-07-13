@@ -66,10 +66,11 @@ killall SystemUIServer 2>/dev/null || true
 # Symlink dotfiles
 echo "🔗 Symlinking dotfiles..."
 ln -sf "$HOME/.dotfiles/.zshrc" "$HOME/.zshrc"
+ln -sf "$HOME/.dotfiles/.aliases" "$HOME/.aliases"
 mkdir -p "$HOME/.config"
 ln -sf "$HOME/.dotfiles/.config/starship.toml" "$HOME/.config/starship.toml"
 mkdir -p "$HOME/.config/fish"
-ln -sf "$HOME/.dotfiles/.config/fish/config.fish" "$HOME/.config/fish/config.fis"
+ln -sf "$HOME/.dotfiles/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
 
 # Exile the Dock (hide and disable animations)
 echo "🛠 Configuring Dock..."

@@ -103,6 +103,6 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # Modern update command (brew-focused)
-alias update='brew update; brew upgrade; brew cleanup; brew doctor'
+alias update='brew update && brew upgrade && brew cleanup'
 
 # Development shortcuts

@@ -9,3 +9,4 @@
 ^/macos\.sh
 ^/Brewfile.*
 ^/skills-lock\.json
+^/bin

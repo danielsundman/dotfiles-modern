@@ -9,7 +9,6 @@ brew "lsd"
 brew "fzf"
 brew "ripgrep"
 brew "tmux"
-brew "jq"
 
 # Git
 brew "git"

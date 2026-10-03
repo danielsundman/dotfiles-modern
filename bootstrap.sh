@@ -34,8 +34,6 @@ if ! stow --dir="$DOTFILES" --target="$HOME" --restow . ; then
     exit 1
 fi
 
-[ -f "$HOME/.gitconfig.local" ] || echo "ℹ️  Create ~/.gitconfig.local with your [user] name and email."
-
 echo "🛠 Applying macOS preferences..."
 "$DOTFILES/macos.sh"
 

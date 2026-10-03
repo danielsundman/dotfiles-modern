@@ -1,3 +1,9 @@
 # Private configuration files
 .extra
 .idea/
+
+# Kept local, not published: agent skills and Claude Code / git personal config
+.agents/
+.claude/
+skills-lock.json
+.gitconfig

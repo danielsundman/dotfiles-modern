@@ -1,0 +1,39 @@
+# Readable on dark backgrounds (256-color palette, not terminal ANSI blue)
+user: 230
+group: 187
+permission:
+  read: 114
+  write: 221
+  exec: 203
+  exec-sticky: 176
+  no-access: 245
+  octal: 80
+  acl: 80
+  context: 80
+date:
+  hour-old: 114
+  day-old: 79
+  older: 73
+size:
+  none: 245
+  small: 229
+  medium: 216
+  large: 209
+inode:
+  valid: 176
+  invalid: 245
+links:
+  valid: 176
+  invalid: 245
+tree-edge: 245
+git-status:
+  default: 245
+  unmodified: 245
+  ignored: 245
+  new-in-index: 114
+  new-in-workdir: 114
+  typechange: 221
+  deleted: 203
+  renamed: 114
+  modified: 221
+  conflicted: 203

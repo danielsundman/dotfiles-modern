@@ -4,6 +4,9 @@ source "$HOME/.dotfiles/.aliases"
 # Load extra configuration (if it exists)
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
 
+# File name colors for lsd/ls (256-color, readable on dark backgrounds)
+export LS_COLORS="di=1;38;5;75:ln=38;5;80:ex=38;5;114:so=38;5;176:pi=38;5;176:bd=38;5;221:cd=38;5;216:or=38;5;203:mi=38;5;203"
+
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 

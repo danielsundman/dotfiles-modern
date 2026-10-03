@@ -39,7 +39,7 @@ install_cask() {
 install_cli git node nvm python fzf ripgrep tmux starship fish atuin lazygit
 
 # GUI apps
-install_cask iterm2 visual-studio-code rectangle raycast warp font-jetbrains-mono
+install_cask iterm2 visual-studio-code rectangle raycast warp font-jetbrains-mono font-meslo-lg-nerd-font
 
 # Trackpad & mouse settings
 echo "🖱 Optimizing trackpad settings..."
@@ -71,6 +71,7 @@ mkdir -p "$HOME/.config"
 ln -sf "$HOME/.dotfiles/.config/starship.toml" "$HOME/.config/starship.toml"
 mkdir -p "$HOME/.config/fish"
 ln -sf "$HOME/.dotfiles/.config/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sfn "$HOME/.dotfiles/.config/lsd" "$HOME/.config/lsd"
 
 # Exile the Dock (hide and disable animations)
 echo "🛠 Configuring Dock..."

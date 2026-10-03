@@ -1,0 +1,11 @@
+# Repo-only files: never link these into $HOME
+\.git
+\.gitignore
+\.stow-local-ignore
+\.DS_Store
+\.idea
+^/README.*
+^/bootstrap\.sh
+^/macos\.sh
+^/Brewfile.*
+^/skills-lock\.json

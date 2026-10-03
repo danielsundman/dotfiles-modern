@@ -34,3 +34,6 @@ setopt SHARE_HISTORY
 # Enable case-insensitive completion
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+# Claude Code
+export CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=1

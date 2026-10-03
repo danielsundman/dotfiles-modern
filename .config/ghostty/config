@@ -1,0 +1,13 @@
+# Ghostty config. See all options: ghostty +show-config --default --docs
+
+font-family = MesloLGM Nerd Font Mono
+font-size = 14
+
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.95
+macos-titlebar-style = tabs
+
+theme = dark:Dark Modern,light:GitHub Light Default
+
+shell-integration-features = cursor,sudo,title

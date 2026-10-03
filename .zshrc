@@ -1,5 +1,9 @@
+# PATH (typeset -U drops duplicate entries)
+typeset -U path
+path=("$HOME/.dotfiles/bin" $path)
+
 # Load aliases
-source "$HOME/.dotfiles/.aliases"
+source "$HOME/.aliases"
 
 # Load extra configuration (if it exists)
 [ -f "$HOME/.extra" ] && source "$HOME/.extra"
@@ -7,19 +11,8 @@ source "$HOME/.dotfiles/.aliases"
 # File name colors for lsd/ls (256-color, readable on dark backgrounds)
 export LS_COLORS="di=1;38;5;75:ln=38;5;80:ex=38;5;114:so=38;5;176:pi=38;5;176:bd=38;5;221:cd=38;5;216:or=38;5;203:mi=38;5;203"
 
-# Initialize Starship prompt
-eval "$(starship init zsh)"
-
-# Add dotfiles bin to PATH
-export PATH="$HOME/.dotfiles/bin:$PATH"
-
-# Add local node_modules/.bin to PATH
-export PATH="./node_modules/.bin:$PATH"
-
-# Node Version Manager (NVM)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"
-[ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"
+# Runtime versions (Node, Python, ...) via mise
+eval "$(mise activate zsh)"
 
 # History settings
 export HISTSIZE=10000
@@ -31,9 +24,19 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
 setopt SHARE_HISTORY
 
-# Enable case-insensitive completion
-autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# Completion: only rebuild the cache once a day, case-insensitive matching
+autoload -Uz compinit
+stale_dump=(${ZDOTDIR:-$HOME}/.zcompdump(N.mh+24))
+if (( ${#stale_dump} )); then
+  compinit
+else
+  compinit -C
+fi
+unset stale_dump
+zstyle ":completion:*" matcher-list "m:{a-zA-Z}={A-Za-z}"
+
+# Initialize Starship prompt
+eval "$(starship init zsh)"
 
 # Claude Code
 export CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=1
